@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import routes from '../constants/routes.json';
-import styles from './Home.css';
 import fs from 'fs';
 import styled from 'styled-components';
+import routes from '../constants/routes.json';
+import styles from './Home.css';
 
 const StyledDiv = styled.div`
   width: 100%;
@@ -15,7 +15,7 @@ export const Home: React.FC = () => {
   const [isLoad, setIsLoad] = React.useState(true);
   let dirList = [];
   while (isLoad) {
-    fs.readdir('/home/hvrl/src/github.com/maasa1221', (err, dir) => {
+    fs.readdir('/Users/maia01/.ghq/github.com/maasa1221/', (err, dir) => {
       // es6
       for (let filePath of dir) {
         console.log(filePath);
@@ -34,7 +34,7 @@ export const Home: React.FC = () => {
   }
   return (
     <div className={styles.container} data-tid="container">
-      <h2>CODE MANAGER from ghq</h2>
+      <h2>SPHERA SYSTEM MANAGEMENT</h2>
       <StyledDiv>{dirList}</StyledDiv>
     </div>
   );
